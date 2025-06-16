@@ -1,27 +1,34 @@
-# 📦 Favorite Number Storage Smart Contract
+## 🧠 Contract Overview
 
-A simple Solidity smart contract that allows users to:
+### 1. `simplestorage.sol`
+A simple contract that:
+- Stores a single `uint256` value.
+- Uses a `struct` to store a person's name and their favorite number.
+- Stores people in an array and uses a mapping to link names to numbers.
 
-- Store their favorite number along with their name and address  
-- Retrieve their own favorite number  
-- Identify who stored which number  
-- Retrieve favorite numbers stored by other users
-
-This project demonstrates core Solidity concepts including:
-
-- ✅ Variables  
-- ✅ Functions  
-- ✅ Arrays  
-- ✅ Mappings  
-- ✅ Data Types  
+#### Key Functions:
+- `store(uint256)`: Save a number.
+- `retrieve()`: View the stored number.
+- `addperson(string, uint256)`: Add a new person to the list and mapping.
 
 ---
 
-## 🚀 Features
+### 2. `storagefac.sol`
+A factory contract that:
+- Deploys new instances of the `SimpleStorage` contract.
+- Allows storing and retrieving values from each deployed instance.
 
-- Store your favorite number with your name and Ethereum address
-- Retrieve your own stored number
-- View others’ stored favorite numbers
-- Easily extendable for learning and experimentation
+#### Key Functions:
+- `createstoragecontract()`: Deploys a new `SimpleStorage` contract.
+- `sfstore(index, value)`: Stores a value in a specified contract instance.
+- `sfget(index)`: Retrieves the value from a specified contract instance.
 
+---
 
+### 3. `addfivestorage.sol`
+A child contract that inherits from `SimpleStorage` and overrides the `store` function to add 5 to any input before storing it.
+
+#### Key Function:
+- `store(uint256)`: Stores the number + 5 instead of the exact input.
+
+---
