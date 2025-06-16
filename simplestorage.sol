@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT 
-pragma solidity ^0.7.4;
+pragma solidity 0.8.30;
 
-contract sstorage{
+contract simplestorage{
     uint256 myfavnumber;
 
      struct person{
@@ -13,7 +13,7 @@ contract sstorage{
      person[] public listofppl;
      mapping(string => uint256) public nametofavnumber;
 
-   function store (uint256 _favnumber) public{
+   function store (uint256 _favnumber) public virtual {
     myfavnumber = _favnumber;
    }
 
