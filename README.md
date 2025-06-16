@@ -32,3 +32,20 @@ A child contract that inherits from `SimpleStorage` and overrides the `store` fu
 - `store(uint256)`: Stores the number + 5 instead of the exact input.
 
 ---
+
+
+📚 Concepts Covered
+✅ Variables & Structs
+
+✅ Mappings & Arrays
+
+✅ Function Visibility
+
+✅ Contract Inheritance
+
+✅ Function Overriding
+
+✅ Contract Deployment via Factory Pattern
+
+📜 License
+This project is licensed under the MIT License.
